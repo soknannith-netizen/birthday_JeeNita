@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Sweetheart ✨</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Atmospheric Particles -->
+    <div class="particles"></div>
+
+    <!-- ផ្នែកទី១៖ អុីមែលផ្ញើសារ (Luxury Envelope) -->
+    <section class="page active" id="page1">
+        <div class="luxury-card animate-pop">
+            <div class="envelope-container" onclick="goToPage(2)">
+                <div class="wax-seal"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <div class="envelope-flap"></div>
+            </div>
+            <p class="hint-text"><i class="fa-regular fa-hand-pointer"></i> Tap the wax seal to open your birthday surprise... ✨</p>
+        </div>
+    </section>
+
+    <!-- ផ្នែកទី២៖ កាតអបអរសាទរ (Glassmorphism Card) -->
+    <section class="page" id="page2">
+        <div class="luxury-card glass-morphism animate-pop">
+            <div class="avatar-badge"><i class="fa-solid fa-ribbon"></i></div>
+            <h2 class="gold-title">HAPPY BIRTHDAY<br>TO YOU NITA</h2>
+            <p class="desc-text">To the one who holds my heart, I made this little world just for you. Let's celebrate our love today!</p>
+            <button class="luxury-btn" onclick="goToPage(3)">Enjoy Your Birthday 🎂 <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <p class="sub-hint">Made with all my love... 👉</p>
+    </section>
+
+    <!-- ផ្នែកទី៣៖ សៀវភៅកំណត់ហេតុសម្ងាត់ (Interactive Journal) -->
+    <section class="page" id="page3">
+        <h2 class="section-heading"><i class="fa-solid fa-book-journal-whills"></i> My Secret Diary</h2>
+        <p class="sub-hint">Tap the diary to read what’s inside my heart</p>
+        
+        <div class="journal-card" id="diaryBook" onclick="openDiary()">
+            <div class="journal-cover" id="bookCover">
+                <div class="journal-title-box">
+                    <h3><i class="fa-solid fa-book-open"></i> My Secret Diary</h3>
+                    <span class="lock-badge"><i class="fa-solid fa-lock"></i> TAP TO UNLOCK & READ</span>
+                </div>
+            </div>
+            <div class="journal-content" id="bookContent" style="display:none;">
+                <h4>My Dearest Love, <i class="fa-solid fa-heart" style="color: #d85777;"></i></h4>
+                <p>Every second with you feels like a beautiful dream I never want to wake up from. You are my favorite reason to smile every single day.</p>
+                <p>Thank you for bringing so much warmth and magic into my life. I love you more than words can ever express.</p>
+                <p class="signature">Forever Yours <i class="fa-solid fa-heart" style="color: #d85777;"></i></p>
+            </div>
+        </div>
+        <button class="luxury-btn mt-24" onclick="goToPage(4)">View The Photo Birthday <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <!-- ផ្នែកទី៤៖ ការចងចាំ (Polaroid 5 Images Switcher) -->
+    <section class="page" id="page4">
+        <h2 class="section-heading"><i class="fa-solid fa-images"></i> This Photo Birthday </h2>
+        <p class="sub-hint">Enjoy Your Birthday To You My Love Nita This Photo Jee Alway Beautiful Girls</p>
+        
+        <div class="polaroid-wrapper" onclick="switchPolaroidPhoto()">
+            <div class="polaroid-item" id="polaroidCard">
+                <img id="polaroidImg" src="https://i.pinimg.com/736x/ff/25/11/ff2511d7ea418a0ebd2f83f96f829cb8.jpg" alt="Memory">
+                <p id="polaroidText"><i class="fa-solid fa-paw"></i> The Day We Fell in Love 🌸</p>
+            </div>
+        </div>
+
+        <button class="luxury-btn mt-24" onclick="goToPage(5)">Time for Birthday Cake! <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <!-- ផ្នែកទី៥៖ កាត់នំខេក (Premium Cake Cut) -->
+    <section class="page" id="page5">
+        <h2 class="section-heading"><i class="fa-solid fa-cake-candles"></i> Birthday Cake Time</h2>
+        <p class="sub-hint">Slide the knife to cut the cake and make a birthday wish! 🎂</p>
+        
+        <div class="cake-box-card">
+            <div class="cake-display" id="birthdayCake">
+                <i class="fa-solid fa-birthday-cake" style="color: #ff6b8b;"></i>
+                <div class="laser-cut-line" id="cuttingLine"></div>
+            </div>
+        </div>
+
+        <button class="outline-btn" id="knifeBtn" onclick="cutCake()"><i class="fa-solid fa-utensils"></i> Cut the Cake Together!</button>
+        <button class="luxury-btn mt-24" id="cakeNextBtn" style="display:none;" onclick="goToPage(6)">Make a Wish <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <!-- ផ្នែកទី៦៖ បំណងប្រាថ្នា (Floating Crystal Bubbles) -->
+    <section class="page" id="page6">
+        <h2 class="section-heading"><i class="fa-solid fa-wand-magic-sparkles"></i> My Wishes For You</h2>
+        <p class="sub-hint">Tap each crystal bubble to reveal my sweetest wishes for your special day! 🫧</p>
+        
+        <div class="crystal-grid">
+            <div class="crystal-bubble" onclick="revealWish(this, 'May your smile shine brighter than ever and your heart be filled with pure happiness today and always! ✨')"><i class="fa-solid fa-face-smile"></i> Endless Joy</div>
+            <div class="crystal-bubble" onclick="revealWish(this, 'Wishing you the best health, peace of mind, and all the love your heart can hold! 🌱')"><i class="fa-solid fa-shield-heart"></i> Good Health</div>
+            <div class="crystal-bubble" onclick="revealWish(this, 'May all your biggest dreams come true, and I will always be right here cheering for you! 🚀')"><i class="fa-solid fa-rocket"></i> Dream Big</div>
+            <div class="crystal-bubble" onclick="revealWish(this, 'May every path you walk lead you to incredible success and wonderful adventures! 💼')"><i class="fa-solid fa-briefcase"></i> Sweet Success</div>
+            <div class="crystal-bubble" onclick="revealWish(this, 'May our love grow deeper, sweeter, and stronger with every single sunrise! ❤️')"><i class="fa-solid fa-hands-holding-child"></i> True Love</div>
+            <div class="crystal-bubble" onclick="revealWish(this, 'No matter what happens, you will always be my home and my forever person! ♾️')"><i class="fa-solid fa-infinity"></i> Forever Mine</div>
+        </div>
+
+        <div class="wish-preview-card" id="wishDisplay">
+            <p>Tap any crystal bubble above to read a romantic message! 💕</p>
+        </div>
+
+        <h3 class="gold-title mt-16" style="font-size: 1.25rem;">Happy Birthday, My Love <i class="fa-solid fa-heart" style="color: #d85777;"></i></h3>
+        <p class="sub-hint" style="margin-bottom: 12px;">YOU ARE MY EVERYTHING</p>
+        <button class="luxury-btn" onclick="goToPage(7)">Open Your Final Gift <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <!-- ផ្នែកទី៧៖ ប្រអប់កាដូព្រីមៀម (Luxury Gift Box) -->
+    <section class="page" id="page7">
+        <h2 class="section-heading"><i class="fa-solid fa-gift"></i> One Last Surprise...</h2>
+        <p class="sub-hint">Tap the luxury box to unwrap your special birthday gift! 🎁</p>
+        
+        <div class="luxury-gift-container" onclick="openGiftBox()">
+            <div class="sparkle-glow"></div>
+            <div class="gift-icon-box" id="giftBox"><i class="fa-solid fa-box-open" style="color: #ff4d6d;"></i></div>
+            <div class="luxury-tag"><i class="fa-solid fa-star"></i> Just For You</div>
+        </div>
+
+        <p class="luxury-final-msg" id="finalMessage"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
